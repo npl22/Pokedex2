@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Guests' do 
+describe 'Guests' do
   describe 'Api::Guests#show' do
     it 'the resource is under the correct namespace' do
       get '/api/guests/1'
@@ -38,14 +38,14 @@ describe 'Guests' do
     end
   end
 
-  describe "Guests' Gifts" do 
-    it "show page shows a guest's gifts" do 
+  describe "Guests' Gifts" do
+    it "show page shows a guest's gifts" do
       get '/api/guests/1'
       expect(json['gifts']).to_not be_nil
       expect(json['gifts'].count).to eq(2)
     end
 
-    it "index page doesn't show guests' gifts" do 
+    it "index page doesn't show guests' gifts" do
       get '/api/guests'
       expect(json[0]['gifts']).to be_nil
     end
