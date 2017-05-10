@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // testing
-import { fetchAllPokemon } from './util/api_util';
-import { receiveAllPokemon } from './actions/pokemon_actions';
-window.fetchAllPokemon = fetchAllPokemon;
+import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
+window.requestAllPokemon = requestAllPokemon;
 window.receiveAllPokemon = receiveAllPokemon;
