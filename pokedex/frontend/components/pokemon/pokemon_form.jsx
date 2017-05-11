@@ -1,25 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-const TYPES = [
-  "fire",
-  "electric",
-  "normal",
-  "ghost",
-  "psychic",
-  "water",
-  "bug",
-  "dragon",
-  "grass",
-  "fighting",
-  "ice",
-  "flying",
-  "poison",
-  "ground",
-  "rock",
-  "steel"
-].sort();
-
 class PokemonForm extends React.Component {
   constructor(props) {
     super(props);
@@ -92,7 +73,7 @@ class PokemonForm extends React.Component {
             value={poke_type}>
             <option disabled> -- Select a Type -- </option>
             {
-              TYPES.map((type, i) => <option
+              window.POKEMON_TYPES.map((type, i) => <option
                 key={i}
                 value={type}>{type}</option>)
             }
