@@ -1,6 +1,11 @@
 import { RECEIVE_SINGLE_POKEMON } from '../actions/pokemon_actions';
 
-const pokemonDetailReducer = (state={}, action) => {
+const initialState = {
+  items: [],
+  moves: []
+};
+
+const pokemonDetailReducer = (state=initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SINGLE_POKEMON:

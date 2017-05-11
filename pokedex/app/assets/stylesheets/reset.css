@@ -1,8 +1,9 @@
-html, body, #root, a {
+html, body, #root, a, section, div {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	text-decoration: none;
+	display: inherit;
 }
 
 ul li {

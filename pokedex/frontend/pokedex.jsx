@@ -13,8 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // testing
-// import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
+import { receiveAllPokemon, requestAllPokemon, createSinglePokemon } from './actions/pokemon_actions';
 // import { selectAllPokemon } from './reducers/selectors';
 // window.selectAllPokemon = selectAllPokemon;
 // window.requestAllPokemon = requestAllPokemon;
 // window.receiveAllPokemon = receiveAllPokemon;
+window.createSinglePokemon = createSinglePokemon;
+
+window.poke = {
+      "name": "Sorrow",
+      "attack": 49,
+      "defense": 49,
+      "poke_type": "grass",
+      "moves": [
+         "tackle",
+         "darkness"
+      ],
+      "image_url": "slkjojijalwkej"
+    };

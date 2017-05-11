@@ -107,7 +107,7 @@ h3 {
   display: flex;
 }
 
-.pokedex ul {
+.pokedex > ul {
   height: calc(100% - 20px);
   width: 300px;
   padding: 0 10px 0 0;
@@ -115,23 +115,31 @@ h3 {
 }
 
 .pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   color: black;
-  margin: 0 auto;
+  width: 100%;
   background-color: $light-grey;
   border: 6px solid black;
   border-radius: 20px;
   padding: 20px;
 }
 
-.pokemon-detail ul {
-  margin: 0;
+.pokemon-detail > ul {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .pokemon-detail img {
-  // width: 300px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.pokemon-detail li {
+  font-size: 16px;
 }
 
 .poke-index-item {
@@ -149,5 +157,33 @@ h3 {
 .poke-index-item img {
   margin-left: 7px;
   margin-right: 7px;
+}
 
+.items {
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.item-list {
+  display: flex;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0 20px 10px;
+}
+
+.item-list li {
+  flex: 1
+}
+
+.item-list li img {
+  width: 150px;
+  height: auto;
+}
+
+.item-detail {
+  flex-direction: column;
+  align-items: center;
 }
