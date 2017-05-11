@@ -57,7 +57,7 @@ class PokemonForm extends React.Component {
     this.props.createSinglePokemon(this.state)
       .then(newPokemon => {
         this.props.history.push(`/pokemon/${newPokemon.id}`);
-      }).then(()=> this.setState(this.emptyState));
+      });
   }
 
   render() {
@@ -70,44 +70,52 @@ class PokemonForm extends React.Component {
       image_url
     } = this.state;
     return(
-      <form className='pokemon-form'
-        onSubmit={this.handleSubmit}>
-        <input
-          placeholder='Name'
-          value={name}
-          onChange={this.updateProp('name')}/>
-        <input
-          placeholder='Image Url'
-          value={image_url}
-          onChange={this.updateProp('image_url')}/>
-        <select
-          onChange={this.updateProp('poke_type')}
-          value={poke_type}>
-          <option disabled> -- Select a Type -- </option>
+      <section>
+        <ul className='errors-list'>
           {
-            TYPES.map((type, i) => <option
-              key={i}
-              value={type}>{type}</option>)
+            this.props.errors.map((err, i )=> <li key={i}>{err}</li>)
           }
-        </select>
-        <input
-          placeholder='Attack'
-          value={attack}
-          onChange={this.updateProp('attack')}/>
-        <input
-          placeholder='Defense'
-          value={defense}
-          onChange={this.updateProp('defense')}/>
-        <input
-          placeholder='Move 1'
-          value={moves[0]}
-          onChange={this.updateProp('move1')}/>
-        <input
-          placeholder='Move 2'
-          value={moves[1]}
-          onChange={this.updateProp('move2')}/>
-        <button>Create Pokemon</button>
-      </form>
+        </ul>
+
+        <form className='pokemon-form'
+          onSubmit={this.handleSubmit}>
+          <input
+            placeholder='Name'
+            value={name}
+            onChange={this.updateProp('name')}/>
+          <input
+            placeholder='Image Url'
+            value={image_url}
+            onChange={this.updateProp('image_url')}/>
+          <select
+            onChange={this.updateProp('poke_type')}
+            value={poke_type}>
+            <option disabled> -- Select a Type -- </option>
+            {
+              TYPES.map((type, i) => <option
+                key={i}
+                value={type}>{type}</option>)
+            }
+          </select>
+          <input
+            placeholder='Attack'
+            value={attack}
+            onChange={this.updateProp('attack')}/>
+          <input
+            placeholder='Defense'
+            value={defense}
+            onChange={this.updateProp('defense')}/>
+          <input
+            placeholder='Move 1'
+            value={moves[0]}
+            onChange={this.updateProp('move1')}/>
+          <input
+            placeholder='Move 2'
+            value={moves[1]}
+            onChange={this.updateProp('move2')}/>
+          <button>Create Pokemon</button>
+        </form>
+      </section>
     );
   }
 }

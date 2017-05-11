@@ -10,6 +10,7 @@ export const createSinglePokemon = (pokemon) => (
   $.ajax({
     method: "POST",
     url: "api/pokemon",
-    data: { pokemon }
+    data: { pokemon },
+    error: (error) => console.log(error)
   })
 );
