@@ -31,5 +31,8 @@ export const requestSinglePokemon = (id) => dispatch => (
 
 export const createSinglePokemon = (poke) => dispatch => (
   APIUtil.createSinglePokemon(poke)
-    .then(responsePoke => dispatch(receiveNewPokemon(responsePoke)))
-);
+    .then(responsePoke => {
+      dispatch(receiveNewPokemon(responsePoke))
+      return responsePoke
+    })
+)
