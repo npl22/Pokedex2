@@ -1,0 +1,23 @@
+html, body, #root, a, section, div, h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+ul li {
+	list-style: none;
+}
+
+a { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+
+img {
+	width: 100%;
+}

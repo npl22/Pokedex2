@@ -1,0 +1,274 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "variables";
+@import "animate";
+
+// ^^ thats how you import
+// @import "components/*";
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  background: white;
+  color: black;
+  font-size: 12px;
+  height: 100%;
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $red;
+  padding: 5px;
+
+  img {
+    width: 43px;
+    height: 43px;
+    margin-left: 75px;
+  }
+
+  button {
+    margin: 3px 75px 3px 0;
+    border-radius: 5px;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+    padding: 12px;
+    color: $grey;
+  }
+}
+
+nav {
+  width: 900px;
+  background-color: $red;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+      a {
+        background-color: white;
+        border-radius: 4px;
+        color: $grey;
+        font-weight: 700;
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+        -webkit-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-in-out;
+        -moz-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-in-out;
+        -ms-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-in-out;
+        -o-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-in-out;
+        transition: box-shadow 0.1s ease-out, background-color 0.1s ease-in-out;
+
+        &:hover {
+          color: $light-grey;
+          -webkit-box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.75);
+          box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.75);
+        }
+
+        &:active {
+          background-color: $light-grey;
+          color: white;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+// Our CSS
+
+#root {
+  height: 100%;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 400;
+  padding: 0;
+}
+
+h3 {
+  font-size: 24px;
+  text-align: center;
+  color: $black;
+}
+
+//Pokedex, Index ------------------------------------------------------
+
+.pokedex {
+  display: flex;
+  height: 150%
+}
+
+.pokedex > ul {
+  height: calc(100% - 20px);
+  flex: 1;
+  padding: 0 10px 0 0;
+  overflow-y: scroll;
+}
+
+.poke-index-item {
+  padding: 5px;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  // transition: 5s ease;
+}
+
+.poke-index-item:hover {
+  background-color: $light-grey;
+
+  // -webkit-transform: translate3d(2px,2px,2px);
+  // -webkit-transform: rotateZ(360deg);
+}
+
+.poke-index-item span {
+  text-decoration: none;
+}
+
+.poke-index-item img {
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 20px;
+}
+
+// Pokemon Detail-----------------------------------------------------
+
+.pokemon-detail {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: black;
+  background-color: $light-grey;
+  border: 6px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px 30px;
+
+  // height: calc(100% - 20px);
+  // overflow-y: scroll;
+
+}
+
+.pokemon-detail figure {
+  width: 80%;
+  background: linear-gradient(315deg, #d43316, #ff0);
+  padding: 30px;
+  border: 4px solid black;
+  border-radius: 8px;
+}
+
+.pokemon-detail figure img {
+  width: 100%;
+  max-height: 380px;
+}
+
+.pokemon-detail > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-detail li {
+  font-size: 18px;
+  padding: 10px;
+}
+
+// Pokemon Items-------------------------------------------------------
+
+.items {
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 5px 10px;
+}
+
+.items h3 {
+  padding-top: 10px;
+}
+
+.item-list {
+  display: flex;
+  border: 4px solid black;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.item-list li {
+  margin: 10px 0;
+}
+
+.item-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  padding: 0;
+}
+
+.item-list li img {
+  transition: 0.2s ease;
+}
+
+.item-list li img:hover {
+  box-shadow: 1px 1px 5px black;
+  -webkit-filter: sepia(50%);
+}
+
+// Pokemon Form--------------------------------------------------------
+
+.pokemon-form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.errors-list {
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.pokemon-form input {
+  transition: 0.2s ease;
+}
+
+.pokemon-form input:focus {
+  background-color: #efcd5d;
+}
